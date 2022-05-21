@@ -1,0 +1,43 @@
+{
+    "diagnostic.messageTarget": "echo",
+    "signature.target": "echo",
+    "suggest.echodocSupport": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "java",
+        "python"
+    ],
+
+    "java.configuration.runtimes": [
+      {
+        "name":"JavaSE-17",
+        "path":"~/.sdkman/candidates/java/17.0.2-open/",
+        "default": true
+      }
+    ],
+
+    "html.autoClosingTags": true,
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
