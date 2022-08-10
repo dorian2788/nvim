@@ -53,10 +53,10 @@ keymap("i", "?", "?<C-g>u", opts)
 
 -- {
 -- }
-keymap("i", "{<CR>", "{}<esc>i<CR><esc>O", opts)
+-- keymap("i", "{<CR>", "{}<esc>i<CR><esc>O", opts)
 
 -- /**
-keymap("i", "/**<CR>", "/**<CR><CR><BS>/<esc>i*<esc>ko", opts)
+-- keymap("i", "/**<CR>", "/**<CR><CR><BS>/<esc>i*<esc>ko", opts)
 
 -- Visual --
 
@@ -82,9 +82,6 @@ keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
 
 -- Nvim-Tree --
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
--- Format --
-keymap("n", "<leader>f", ":Format<cr>", opts)
 
 -- Git --
 keymap("n", "<leader>ga", ":Git fetch --all<CR>")

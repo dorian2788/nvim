@@ -49,6 +49,7 @@ M.setup = function()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
+
 end
 
 local function lsp_highlight_document(client)
@@ -104,8 +105,13 @@ M.on_attach = function(client, bufnr)
       require("jdtls").setup_dap { hotcodereplace = "auto" }
       require("jdtls.dap").setup_dap_main_class_configs()
     end
-    M.capabilities.textDocument.completion.completionItem.snippetSupport = false
+    -- M.capabilities.textDocument.completion.completionItem.snippetSupport = false
+    client.resolved_capabilities.document_formatting = false
     vim.lsp.codelens.refresh()
+  end
+
+  if client.name == "html" then
+    client.resolved_capabilities.document_formatting = false
   end
 
   lsp_keymaps(bufnr)

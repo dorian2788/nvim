@@ -45,10 +45,10 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "kyazdani42/nvim-web-devicons"
   use {
-  'kyazdani42/nvim-tree.lua',
-  requires = {
-    'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  },
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
   }
   -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -63,18 +63,18 @@ return packer.startup(function(use)
 
   use {
     'goolord/alpha-nvim',
-    config = function ()
-      require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    config = function()
+      require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     end
   }
 
   use "frazrepo/vim-rainbow"
 
   -- Markdown
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
 
   -- dispatch
-  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+  use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
   -- Colorschemes
   use "morhetz/gruvbox"
@@ -100,8 +100,8 @@ return packer.startup(function(use)
 
   -- Telescope
   use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use { "nvim-telescope/telescope-fzy-native.nvim" }
   use { "nvim-lua/popup.nvim" }
@@ -111,13 +111,13 @@ return packer.startup(function(use)
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { "nvim-treesitter/playground"}
+  use { "nvim-treesitter/playground" }
 
   -- Git
-  use {"tpope/vim-fugitive"}
-  use {"junegunn/gv.vim"}
-  use {"mhinz/vim-signify"}
-  use {"tpope/vim-rhubarb"}
+  use { "tpope/vim-fugitive" }
+  use { "junegunn/gv.vim" }
+  use { "mhinz/vim-signify" }
+  use { "tpope/vim-rhubarb" }
 
   -- DAP
   use "mfussenegger/nvim-dap"
@@ -125,10 +125,10 @@ return packer.startup(function(use)
   use "ravenxrz/DAPInstall.nvim"
 
   --CSS
-  use {"ap/vim-css-color"}
+  use { "ap/vim-css-color" }
 
   --Java
-  use {'mfussenegger/nvim-jdtls'}
+  use { 'mfussenegger/nvim-jdtls' }
 
   --Style
   use {
@@ -137,6 +137,14 @@ return packer.startup(function(use)
   }
   use "numToStr/Comment.nvim"
   use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  --html autoclose tags
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({ enable = true })
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
