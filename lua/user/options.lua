@@ -39,3 +39,4 @@ set.sidescrolloff = 8
 set.incsearch = true
 set.hidden = true
 set.errorbells = false
+set.syntax = "on"

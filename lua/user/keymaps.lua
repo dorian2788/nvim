@@ -92,3 +92,5 @@ keymap("n", "<leader>gh", ":diffget //3<CR>")
 keymap("n", "<leader>gf", ":diffget //2<CR>")
 keymap("n", "<leader>gs", ":G<CR>")
 keymap("n", "<leader>gd", ":Git difftool<CR>")
+
+keymap("v", "<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>')
