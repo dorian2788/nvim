@@ -43,6 +43,12 @@ return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
   use "kyazdani42/nvim-web-devicons"
   use {
     'kyazdani42/nvim-tree.lua',
@@ -78,6 +84,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "sainnhe/gruvbox-material"
+  use "sainnhe/sonokai"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -92,7 +99,6 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   -- LSP
-  use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
   use "jose-elias-alvarez/null-ls.nvim"
   use "RRethy/vim-illuminate"

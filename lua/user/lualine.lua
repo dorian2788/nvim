@@ -88,13 +88,13 @@ local progress = {
   color = "SLProgress",
 }
 
-local current_signature = function()
-  if not pcall(require, "lsp_signature") then
-    return
-  end
-  local sig = require("lsp_signature").status_line(30)
-  return "%#SLSeparator#" .. sig.hint .. "%*"
-end
+--[[ local current_signature = function() ]]
+--[[   if not pcall(require, "lsp_signature") then ]]
+--[[     return ]]
+--[[   end ]]
+--[[   local sig = require("lsp_signature").status_line(30) ]]
+--[[   return "%#SLSeparator#" .. sig.hint .. "%*" ]]
+--[[ end ]]
 
 local spaces = {
   function()
@@ -161,7 +161,7 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = "gruvbox_dark",
+    theme = "gruvbox-material",
     -- theme = theme,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
@@ -171,8 +171,9 @@ lualine.setup {
   sections = {
     lualine_a = { mode, branch },
     lualine_b = { diagnostics },
+    lualine_c = {'filename'},
     -- lualine_c = {},
-    lualine_c = { { current_signature, cond = hide_in_width } },
+    --[[ lualine_c = { { current_signature, cond = hide_in_width } }, ]]
     -- lualine_x = { diff, spaces, "encoding", filetype },
     lualine_x = { diff, lanuage_server, spaces, filetype },
     lualine_y = { progress },
